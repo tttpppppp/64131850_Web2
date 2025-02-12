@@ -1,0 +1,148 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Me - Trần Tiến Phúc</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+        .about-container {
+            max-width: 750px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+        }
+
+        .profile-img:hover {
+            box-shadow: 0 0 25px rgba(118, 75, 162, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Title & Description */
+        h1 {
+            font-weight: bold;
+            color: #333;
+            font-size: 28px;
+            margin-top: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .contact-info i {
+            color: #667eea;
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            margin: 0 12px;
+            color: #667eea;
+            transition: transform 0.3s ease-in-out, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff6600;
+            transform: scale(1.2);
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.3);
+            display: inline-block;
+            margin-top: 25px;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="">
+        <div class="about-container">
+            <img src="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/450972642_1152968809289582_2797258446645461182_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ahxkiPa095sQ7kNvgFQOYNs&_nc_oc=Adg07N4S_JgPGfURoNMgLCAcqOA1_9lUbZ-iOKEn9HPR3nnLvOCkw6hNYfhkPWVOok0&_nc_zt=23&_nc_ht=scontent.fdad3-5.fna&_nc_gid=A6ktqTMFbAxoSEyzn3fSL8I&oh=00_AYDn33jdjc-xA8FpdTUlEaAYLMCMy6kKkicqL_8frnTsog&oe=67B2688C"
+                alt="Profile Image" class="profile-img">
+            <h1 class="mt-3">Trần Tiến Phúc</h1>
+            <p class="text-muted">Web Developer | Java & Spring Boot | Frontend & Backend</p>
+
+            <p class="mt-3">
+                Xin chào! Tôi là một lập trình viên yêu thích phát triển web. Tôi có kinh nghiệm làm việc với Java, Spring Boot,
+                và các công nghệ frontend như React, Bootstrap.
+            </p>
+            <div class="contact-info text-center mt-4">
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:tranphuc@example.com">despacitovv@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> Số điện thoại: <a href="tel:+84987654321">+84 987 654 321</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Nha Trang, Việt Nam</p>
+            </div>
+            <div class="social-icons mt-4">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <!-- Button -->
+            <div class="">
+                <a href="https://www.facebook.com/Chongaythanhconggg/" class="btn-custom">Liên hệ ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
