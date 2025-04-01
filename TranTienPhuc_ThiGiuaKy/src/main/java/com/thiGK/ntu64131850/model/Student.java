@@ -1,22 +1,21 @@
 package com.thiGK.ntu64131850.model;
 
 public class Student {
-    private int id;
+    private String id;
     private String name;
-    private int groupId;
+    private String groupId;
 
-
-    public Student(int id, String name, int groupId) {
+    public Student(String id, String name, String groupId) {
         this.id = id;
         this.name = name;
         this.groupId = groupId;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -28,11 +27,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getGroupId() {
+    public String getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(int groupId) {
+    public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
 }

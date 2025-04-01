@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6830/6830335.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Chi tiết Topic</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .topic-detail {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .topic-detail h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .topic-content {
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .topic-content p {
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    .topic-actions {
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    .btn-edit {
+      background: #ffc107;
+      color: black;
+      border: 1px solid #ffc107;
+    }
+
+    .btn-edit:hover {
+      background: #e0a800;
+    }
+
+    .btn-delete {
+      background: #dc3545;
+      color: white;
+      border: 1px solid #dc3545;
+    }
+
+    .btn-delete:hover {
+      background: #c82333;
+    }
+
+  </style>
+</head>
+<body>
+<div th:insert="~{layout/header}"></div>
+<main>
+  <div th:insert="~{component/sidebar}"></div>
+  <section class="middle">
+    <div class="topic-detail">
+      <h2><i class="fas fa-book-open"></i> Chi tiết học sinh</h2>
+      <div class="topic-content">
+        <p><strong>ID:</strong> <span th:text="${student.id}"></span></p>
+        <p><strong>Tên Topic:</strong> <span th:text="${student.name}"></span></p>
+        <p><strong>Người hướng dẫn:</strong> <span th:text="${student.groupid}"></span></p>
+      </div>
+      <div class="topic-actions">
+        <a href="/topic/all" class="btn btn-edit"><i class="fas fa-edit"></i>Quay lại</a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="/js.js"></script>
+</body>
+</html>
