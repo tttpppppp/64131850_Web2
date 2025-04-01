@@ -47,6 +47,11 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+         nav img.logo{
+             width: 14rem;
+             cursor: pointer;
+             cursor: pointer;
+         }
     </style>
 </head>
 <body>
@@ -54,27 +59,28 @@
 <main>
     <div th:insert="~{component/sidebar}"></div>
     <section class="middle">
-        <a class="button" href="/admin/themSinhVien">Thêm sinh viên</a>
+        <a class="button" href="/topic/new">Thêm Topic</a>
         <div th:if="${success}" style="color:green;" th:text="${success}"></div>
         <div th:if="${error}" style="color:red;" th:text="${error}"></div>
         <table>
             <thead>
             <tr>
-                <th>MSSV</th>
-                <th>Họ tên</th>
-                <th>Email</th>
+                <th>Id</th>
+                <th>Topic Name</th>
+                <th>SupervisorId</th>
+                <th>TopicType</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="sv : ${danhSachSinhVien}">
-                <td th:text="${sv.mssv}">SV001</td>
-                <td th:text="${sv.username}">Nguyễn Văn A</td>
-                <td th:text="${sv.email}">a@example.com</td>
+            <tr th:each="t : ${topics}">
+                <td th:text="${t.id}"></td>
+                <td th:text="${t.topicName}"></td>
+                <td th:text="${t.supervisorId}"></td>
+                <td th:text="${t.typicType}"></td>
             </tr>
             </tbody>
         </table>
     </section>
-    <div th:insert="~{component/right}"></div>
 </main>
 <script src="/js.js"></script>
 </body>

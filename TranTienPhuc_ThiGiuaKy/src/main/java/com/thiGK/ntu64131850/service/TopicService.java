@@ -19,4 +19,7 @@ public class TopicService {
     public List<Topic> getAllTopics() {
         return topics;
     }
+    public boolean addTopic(Topic topic) {
+        return topics.add(topic);
+    }
 }

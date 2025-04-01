@@ -56,6 +56,11 @@
     button:hover {
       background-color: #0056b3;
     }
+    nav img.logo{
+      width: 14rem;
+      cursor: pointer;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -64,16 +69,26 @@
   <div th:insert="~{component/sidebar}"></div>
   <section class="middle">
     <div class="form-container" id="studentForm">
-      <h2>Thêm sinh viên</h2>
-      <form action="/admin/student/add" method="POST">
-        <label for="mssv">MSSV:</label>
-        <input type="text" id="mssv" name="mssv" required>
+      <h2>Thêm Topic</h2>
+      <form action="/topic/new" method="POST">
+        <label for="mssv">ID</label>
+        <input type="text" id="mssv" name="id" required>
 
-        <label for="name">Họ tên:</label>
-        <input type="text" id="name" name="username" required>
+        <label for="name">Topic Name:</label>
+        <input type="text" id="name" name="topicName" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">Topic Description</label>
+        <input type="email" id="email" name="topicDescription" required>
+
+        <label for="email">Topic Description</label>
+        <input type="text"  name="topicDescription" required>
+
+        <label for="email">Topic SupervisorId</label>
+        <input type="text"  name="supervisorId" required>
+
+        <label for="email">Topic SupervisorId</label>
+        <input type="text"  name="supervisorId" required>
+
 
         <button type="submit" class="btn">Lưu</button>
       </form>
