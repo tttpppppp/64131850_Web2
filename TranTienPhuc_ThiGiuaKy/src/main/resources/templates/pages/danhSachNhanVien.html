@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6830/6830335.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Danh sách nhân viên</title>
+    <style>
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{layout/header}"></div>
+<main>
+    <div th:insert="~{component/sidebar}"></div>
+    <section class="middle">
+        <a class="button" href="/admin/themSinhVien">Thêm sinh viên</a>
+        <div th:if="${success}" style="color:green;" th:text="${success}"></div>
+        <div th:if="${error}" style="color:red;" th:text="${error}"></div>
+        <table>
+            <thead>
+            <tr>
+                <th>MSSV</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="sv : ${danhSachSinhVien}">
+                <td th:text="${sv.mssv}">SV001</td>
+                <td th:text="${sv.username}">Nguyễn Văn A</td>
+                <td th:text="${sv.email}">a@example.com</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <div th:insert="~{component/right}"></div>
+</main>
+<script src="/js.js"></script>
+</body>
+</html>

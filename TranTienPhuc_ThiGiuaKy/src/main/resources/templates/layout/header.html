@@ -1,0 +1,30 @@
+<nav>
+    <div class="container">
+        <a href="index.html"><img th:src="@{/images/logo.png}" alt="logo" class="logo"></a>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="profile-area">
+            <div class="theme-btn">
+                <i class="fa-regular fa-sun active"></i>
+                <i class="fa-solid fa-moon"></i>
+            </div>
+            <div class="nav-icon">
+                <i class='bx bx-bell bx-tada' id="bell-icon"><span></span></i>
+                <i class='bx bxs-download'></i>
+            </div>
+            <div class="profile">
+                <div class="profile-photo">
+                    <img th:src="@{/images/profile-1.jpg}" alt="">
+                </div>
+                <div>
+                    <h5>Tran Tien Phuc</h5>
+                </div>
+            </div>
+            <button id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
