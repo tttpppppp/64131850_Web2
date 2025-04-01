@@ -22,4 +22,20 @@ public class TopicService {
     public boolean addTopic(Topic topic) {
         return topics.add(topic);
     }
+    public Topic getTopic(String id) {
+        for (Topic topic : topics) {
+            if (topic.getId().equals(id)) {
+                return topic;
+            }
+        }
+        return null;
+    }
+    public boolean deleteTopic(String id) {
+        for (Topic topic : topics) {
+            if (topic.getId().equals(id)) {
+                return topics.remove(topic);
+            }
+        }
+        return false;
+    }
 }

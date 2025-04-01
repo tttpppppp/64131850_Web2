@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -43,8 +44,26 @@ public class HomeController {
             redirectAttributes.addFlashAttribute("success", "Thêm topic  thành công");
             return "redirect:/topic/all";
         }
-        System.out.println("cc");
         redirectAttributes.addFlashAttribute("success", "Thêm topic thất bại");
         return "pages/themTopic";
+    }
+    @GetMapping("/topic/view/{id}")
+        public String topicView(@PathVariable String id , ModelMap model) {
+        Topic topic = topicService.getTopic(id);
+        if(topic == null) {
+            return "redirect:/topic/all";
+        }
+        model.addAttribute("topic" , topicService.getTopic(id));
+        return "pages/chiTietTopic";
+    }
+    @GetMapping("/topic/delete/{id}")
+    public String topicDelete(@PathVariable String id , ModelMap model , RedirectAttributes redirectAttributes) {
+        boolean isSuccess = topicService.deleteTopic(id);
+        if(isSuccess) {
+            redirectAttributes.addFlashAttribute("success", "Xóa topic  thành công");
+            return "redirect:/topic/all";
+        }
+        redirectAttributes.addFlashAttribute("success", "Xóa topic  thành công");
+        return "redirect:/topic/all";
     }
 }
