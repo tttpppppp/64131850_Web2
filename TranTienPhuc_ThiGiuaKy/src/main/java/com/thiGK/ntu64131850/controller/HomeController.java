@@ -1,10 +1,14 @@
 package com.thiGK.ntu64131850.controller;
 
+import com.thiGK.ntu64131850.model.Topic;
 import com.thiGK.ntu64131850.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class HomeController {
@@ -23,6 +27,24 @@ public class HomeController {
     }
     @GetMapping("/topic/new")
     public String topicNew() {
+        return "pages/themTopic";
+    }
+    @PostMapping("/topic/new")
+    public String themSinhVienDb(ModelMap model ,
+                                 @RequestParam String id ,
+                                 @RequestParam String topicName ,
+                                 @RequestParam String topicDescription,
+                                 @RequestParam String supervisorId,
+                                 @RequestParam String typicType ,
+                                 RedirectAttributes redirectAttributes) {
+        boolean isSuccess = topicService.addTopic(new Topic(id, topicName, topicDescription, supervisorId, typicType));
+        System.out.println(id + topicName + topicDescription + supervisorId + typicType);
+        if(isSuccess) {
+            redirectAttributes.addFlashAttribute("success", "Thêm topic  thành công");
+            return "redirect:/topic/all";
+        }
+        System.out.println("cc");
+        redirectAttributes.addFlashAttribute("success", "Thêm topic thất bại");
         return "pages/themTopic";
     }
 }

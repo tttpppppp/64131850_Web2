@@ -1,13 +1,13 @@
 package com.thiGK.ntu64131850.model;
 
 public class Topic {
-    private int id;
+    private String id;
     private String topicName;
     private String topicDescription;
-    private int supervisorId;
+    private String supervisorId;
     private String typicType;
 
-    public Topic(int id, String topicName, String topicDescription, int supervisorId, String typicType) {
+    public Topic(String id, String topicName, String topicDescription, String supervisorId, String typicType) {
         this.id = id;
         this.topicName = topicName;
         this.topicDescription = topicDescription;
@@ -15,11 +15,11 @@ public class Topic {
         this.typicType = typicType;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -39,11 +39,11 @@ public class Topic {
         this.topicDescription = topicDescription;
     }
 
-    public int getSupervisorId() {
+    public String getSupervisorId() {
         return supervisorId;
     }
 
-    public void setSupervisorId(int supervisorId) {
+    public void setSupervisorId(String supervisorId) {
         this.supervisorId = supervisorId;
     }
 
